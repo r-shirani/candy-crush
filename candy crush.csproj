@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{839F1DE5-B909-4B3F-866D-EC5386C19A24}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>candy_crush</RootNamespace>
+    <AssemblyName>candy crush</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CandyCrushGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CandyCrushGame.Designer.cs">
+      <DependentUpon>CandyCrushGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CandyType.cs" />
+    <Compile Include="DataBase.cs" />
+    <Compile Include="SignUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUpForm.Designer.cs">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignInForm.Designer.cs">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game.cs" />
+    <Compile Include="Match.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm.Designer.cs">
+      <DependentUpon>WinForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CandyCrushGame.resx">
+      <DependentUpon>CandyCrushGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUpForm.resx">
+      <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignInForm.resx">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WinForm.resx">
+      <DependentUpon>WinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-candy-cane-bonbon-gummy-bear-vector-candy-border-5a7055e46d35c7.6595674815173114604473.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Candy-Crush-Friends-Saga-Mod-Icon.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mainBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy-crush-logo-ABC1730DA2-seeklogo.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-candy-crush-saga-candy-crush-soda-saga-bubble-witc-candy-crush-5abf518f050756.3083578015224876950206.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy51.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy77.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-candy-376.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-candy-crush-saga-candy-crush-soda-saga-bubble-witc-candy-crush-5abf518f050756.30835780152248769502061.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download1.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\378-3787233_ccss-logo-candy-crush-soda-saga-tips-cheats.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy-frame-11550236475eei0xvt2xm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy-frame-11550236475eei0xvt2xm1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-rectangular-multicolored-congratulation-frame-frames-android-google-play-congratulations-s-borders-text-photography-easter-egg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Candy-Crush-Logo-PNG-Picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candy-cane-bonbon-gummy-bear-vector-candy-border-b7ee080b79a3343235216f697d3ac8eb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgbin_candy-crush-saga-candy-crush-soda-saga-king-toffee-png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com%281%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
